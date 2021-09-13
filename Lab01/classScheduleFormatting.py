@@ -27,6 +27,7 @@ class ClassSchedule:
                                         class_info[4], class_info[5],
                                         class_info[6], class_info[7])
                     self.out.append(obj)
+                    class_info = []
                 if count == 9:
                     count -= 1
                     continue
