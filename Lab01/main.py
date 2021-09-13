@@ -77,7 +77,53 @@ def part4():
             count += 1
 
 def part5():
-    pass
+    with open("grades.txt", "r+") as f:
+        content = f.read()
+        grades_dict = json.loads(content)
+
+        while True:
+            todo = input("What would you like to do? (create student: a, request grade: b, edit grade: c, delete grade: d) ")
+            if todo == "a":
+                name = input("Enter name of new Student: ")
+                grade = input(f"Enter grade of {name}: ")
+                grades_dict[name] = grade
+            elif todo == "b":
+                while True:
+                    name = input("Enter name of student to get you the grade: ")
+                    if name in grades_dict:
+                        print(f"{name}'s grade is {grades_dict[name]}")
+                        break
+                    else:
+                        print("That student doesn't exist.. try again")
+            elif todo == "c":
+                while True:
+                    name = input("What student would you like to edit today? ")
+                    if name not in grades_dict:
+                        print("Student doesn't exit. Try again...")
+                        continue
+                    
+                    grade = input("What grade would you like to give them? ")
+                    grades_dict[name] = float(grade)
+                    break
+                
+            elif todo == "d":
+                while True:
+                    name = input("For what student you would like to delete grade for? ")
+                    if name in grades_dict:
+                        grades_dict[name] = None
+                        break
+                    else:
+                        print("Try again... Student doesn't exist")
+                
+            else:
+                print("Enter a valid input...")
+                continue
+
+            again = input("Would u like to do something else? (y/n)").lower()
+            if again != "y":
+                break
+    with open("grades.txt", "w") as f:
+        json.dump(grades_dict, f)
     
 def main():
     part5()
