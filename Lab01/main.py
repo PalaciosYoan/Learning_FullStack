@@ -79,10 +79,11 @@ def part4():
             count += 1
 
 def part5():
-    with open("grades.txt", "w+") as f:
+    with open("grades.txt", "r+") as f:
         content = f.read()
         grades_dict = json.loads(content)
-        
+        f.seek(0)
+        f.truncate()
         while True:
             todo = input("What would you like to do? (create student: a, request grade: b, edit grade: c, delete grade: d) ")
             if todo == "a":
@@ -124,10 +125,12 @@ def part5():
             else:
                 print("Enter a valid input...")
                 continue
-
+            
+            print(grades_dict)
             again = input("Would u like to do something else? (y/n)").lower()
             if again != "y":
                 break
+    
         json.dump(grades_dict, f)
     
     
