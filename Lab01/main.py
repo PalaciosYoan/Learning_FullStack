@@ -1,9 +1,10 @@
 import json
-
+from pdb import set_trace
 def part1():
     while True:
         try:
             user_input = input().split()
+            # set_trace()
             for i in range(len(user_input)):
                 user_input[i] = float(user_input[i])
             print(sum(user_input))
@@ -47,6 +48,7 @@ class ClassSchedule:
 
 
 def part4():
+    """ This has to be part of the classs"""
     out = [] #storing object for each class
     with open("classesInput.txt", "r") as f:
         count = 9
@@ -77,16 +79,18 @@ def part4():
             count += 1
 
 def part5():
-    with open("grades.txt", "r+") as f:
+    with open("grades.txt", "w+") as f:
         content = f.read()
         grades_dict = json.loads(content)
-
+        
         while True:
             todo = input("What would you like to do? (create student: a, request grade: b, edit grade: c, delete grade: d) ")
             if todo == "a":
                 name = input("Enter name of new Student: ")
                 grade = input(f"Enter grade of {name}: ")
                 grades_dict[name] = grade
+                # set_trace()
+                
             elif todo == "b":
                 while True:
                     name = input("Enter name of student to get you the grade: ")
@@ -104,6 +108,7 @@ def part5():
                     
                     grade = input("What grade would you like to give them? ")
                     grades_dict[name] = float(grade)
+                    
                     break
                 
             elif todo == "d":
@@ -111,6 +116,7 @@ def part5():
                     name = input("For what student you would like to delete grade for? ")
                     if name in grades_dict:
                         grades_dict[name] = None
+                        
                         break
                     else:
                         print("Try again... Student doesn't exist")
@@ -122,15 +128,15 @@ def part5():
             again = input("Would u like to do something else? (y/n)").lower()
             if again != "y":
                 break
-    with open("grades.txt", "w") as f:
         json.dump(grades_dict, f)
     
+    
 def main():
-    part1()
-    # part2()
-    # part3()
-    # part4()
-    # part5()
+    #part1()
+    #part2()
+    #part3()
+    #part4()
+    part5()
     
 
 
