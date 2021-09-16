@@ -11,6 +11,7 @@ def part5():
                 name = input("Enter name of new Student: ")
                 grade = input(f"Enter grade of {name}: ")
                 grades_dict[name] = grade
+                json.dump(grades_dict, f)
                 # set_trace()
                 
             elif todo == "b":
@@ -30,6 +31,7 @@ def part5():
                     
                     grade = input("What grade would you like to give them? ")
                     grades_dict[name] = float(grade)
+                    json.dump(grades_dict, f)
                     
                     break
                 
@@ -38,7 +40,7 @@ def part5():
                     name = input("For what student you would like to delete grade for? ")
                     if name in grades_dict:
                         grades_dict[name] = None
-                        
+                        json.dump(grades_dict, f)
                         break
                     else:
                         print("Try again... Student doesn't exist")
@@ -52,5 +54,4 @@ def part5():
             if again != "y":
                 break
     
-        json.dump(grades_dict, f)
 part5()
