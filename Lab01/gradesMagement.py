@@ -11,6 +11,8 @@ def part5():
                 name = input("Enter name of new Student: ")
                 grade = input(f"Enter grade of {name}: ")
                 grades_dict[name] = grade
+                f.seek(0)
+                f.truncate()
                 json.dump(grades_dict, f)
                 # set_trace()
                 
@@ -31,6 +33,8 @@ def part5():
                     
                     grade = input("What grade would you like to give them? ")
                     grades_dict[name] = float(grade)
+                    f.seek(0)
+                    f.truncate()
                     json.dump(grades_dict, f)
                     
                     break
@@ -39,7 +43,11 @@ def part5():
                 while True:
                     name = input("For what student you would like to delete grade for? ")
                     if name in grades_dict:
-                        grades_dict[name] = None
+                        
+                        del(grades_dict[name])
+                        #print(grades_dict)
+                        f.seek(0)
+                        f.truncate()
                         json.dump(grades_dict, f)
                         break
                     else:
@@ -49,7 +57,7 @@ def part5():
                 print("Enter a valid input...")
                 continue
             
-            print(grades_dict)
+            #print(grades_dict)
             again = input("Would u like to do something else? (y/n)").lower()
             if again != "y":
                 break
