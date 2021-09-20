@@ -1,4 +1,4 @@
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import pandas as pd
 
 
@@ -7,8 +7,11 @@ def part3():
     df = pd.read_csv(filepath, delimiter=",")
     
     df['date']=pd.to_datetime(df['date'])
-    
-    plt.scatter(df['actual_min_temp'], df['actual_max_temp'])
+    ax = plt.gca()
+    df.plot(kind='line', x='date', y='actual_min_temp', color='blue', ax=ax)
+    df.plot(kind='line', x='date', y='actual_max_temp', color='red', ax=ax)
+    df.hist(column='actual_precipitation')
+    print(df['actual_precipitation'].mean())
     plt.show()
     
 
