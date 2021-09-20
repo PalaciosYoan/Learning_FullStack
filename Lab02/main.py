@@ -2,8 +2,8 @@ import numpy as np
 
 
 def main():
-    # m = np.arange(2,10).reshape(4,2)
-    # print(m)
+    m = np.arange(2,10).reshape(4,2)
+    print(m)
 
 
     m = np.zeros((8,8))
