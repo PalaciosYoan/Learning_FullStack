@@ -1,13 +1,19 @@
 import numpy as np
 
 
-def main():
+def part1():
     m = np.arange(2,10).reshape(4,2)
     print(m)
 
 
     m = np.zeros((8,8))
-    
+    i = 0
+    for r in m:
+        r[i::2] = 1
+        if i == 0:
+            i = 1
+        else:
+            i = 0
     print(m)
     
     List = [10, 20, 10, 30, 20, 40, 20, 20, 10, 30, 0, 50, 10]
@@ -41,4 +47,4 @@ def part2():
     print(np.linalg.eig(A)[0])
 
 
-part2()
+part1()
