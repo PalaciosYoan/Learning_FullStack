@@ -11,7 +11,7 @@ def part3():
     df.plot(kind='line', x='date', y='actual_min_temp', color='blue', ax=ax)
     df.plot(kind='line', x='date', y='actual_max_temp', color='red', ax=ax)
     df.hist(column='actual_precipitation')
-    print(df['actual_precipitation'].mean())
+
     plt.show()
     
 

@@ -13,7 +13,7 @@ def part1():
     print(df2['actual_max_temp'].mean())
     
     df3 = df[(df['actual_max_temp'] == df['record_max_temp'])]
-    print(df3[['actual_max_temp', 'record_max_temp']])
+    print(df3[['date','actual_max_temp', 'record_max_temp']])
     
     df4 = df[(df['date'] >= '2014-10-01') & (df['date'] < '2014-11-01')]
     df4 = df4['actual_precipitation'].sum()
