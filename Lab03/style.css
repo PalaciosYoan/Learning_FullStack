@@ -1,0 +1,43 @@
+:root {
+    background-color: lightblue;
+    color: blue;
+    font: optional;
+    font-size: large;
+    text-align: center;
+    margin: 1em 1em 1em 1em;
+    padding: 1em 1em 1em 1em;
+}
+
+.navbar {
+    text-align: left;
+    border-radius: 5%;
+    border: 1px solid #000;
+}
+
+.navbar li {
+    display: inline;
+    padding-right: 5em;
+}
+
+table {
+    width: 100%;
+    background-color: #eee;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: #000;
+    color: white;
+    padding: 1em 1em 1em 1em;
+    margin-left: 2em;
+}
+
+table td {
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+
+/* table td {
+  text-align: left;
+} */
