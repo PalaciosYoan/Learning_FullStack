@@ -8,6 +8,10 @@
     padding: 1em 1em 1em 1em;
 }
 
+p {
+    text-align: justify;
+}
+
 .navbar {
     text-align: left;
     border-radius: 5%;
@@ -36,6 +40,12 @@ table td {
     padding: 5px;
     border: 1px solid #000;
 }
+
+table img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+  }
 
 
 /* table td {
