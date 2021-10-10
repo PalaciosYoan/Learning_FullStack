@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="calculator-grid">
+        <tr>
+            <td>
+                <div class="output">
+
+                    <div data-current-operand class="current-operand"></div>
+                </div>
+            </td>
+        </tr>
+        <table>
+            <tr>
+                <td colspan="2" style="width:100%" class="span-two">
+                    <button data-all-clear>AC</button>
+                </td>
+                <td>
+                    <button data-delete>DEL</button>
+                </td>
+                <td>
+                    <button data-operation>÷</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button data-number>1</button>
+                </td>
+                <td>
+                    <button data-number>2</button>
+                </td>
+                <td>
+                    <button data-number>3</button>
+                </td>
+                <td>
+                    <button data-operation id='mult' onclick="multColorButton()">*</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button data-number>4</button>
+                </td>
+                <td>
+                    <button data-number>5</button>
+                </td>
+                <td>
+                    <button data-number>6</button>
+                </td>
+                <td>
+                    <button data-operation>+</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button data-number>7</button>
+                </td>
+                <td>
+                    <button data-number>8</button>
+                </td>
+                <td>
+                    <button data-number>9</button>
+                </td>
+                <td>
+                    <button data-operation>-</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button data-number>.</button>
+                </td>
+                <td>
+                    <button data-number>0</button>
+                </td>
+                <td colspan="2" style="width:100%" class="span-two">
+                    <button data-equals>=</button>
+                </td>
+            </tr>
+        </table>
+    </div class='class="calculator-grid"'>
+</body>
+
+</html>
