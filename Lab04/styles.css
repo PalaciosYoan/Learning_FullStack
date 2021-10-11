@@ -55,13 +55,28 @@ td .span-two {
     font-size: 2rem;
     border: 2px solid white;
     outline: none;
+}
+
+.calculator-grid button:hover {
+    background: linear-gradient(#f10808, #054141);
+}
+
+[data-number] {
+    background: rgba(61, 26, 32, 0.75);
+}
+
+[data-operation],
+[data-equals] {
     background-color: rgba(114, 114, 114, 0.75);
 }
 
+[data-all-clear] {
+    background-color: rgba(233, 221, 221, 0.75);
+}
 
-/* .calculator-grid button:hover {
-    background: linear-gradient(#f10808, #054141);
-} */
+[data-delete] {
+    background-color: rgba(83, 88, 10, 0.75);
+}
 
 .output {
     grid-column: 1 / -1;

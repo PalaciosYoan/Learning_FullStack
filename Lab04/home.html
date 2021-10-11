@@ -29,7 +29,7 @@
                     <button data-delete>DEL</button>
                 </td>
                 <td>
-                    <button data-operation>÷</button>
+                    <button data-operation id='÷'>÷</button>
                 </td>
             </tr>
 
@@ -44,7 +44,7 @@
                     <button data-number>3</button>
                 </td>
                 <td>
-                    <button data-operation id='mult' onclick="multColorButton()">*</button>
+                    <button data-operation id='*'>*</button>
                 </td>
             </tr>
 
@@ -59,7 +59,7 @@
                     <button data-number>6</button>
                 </td>
                 <td>
-                    <button data-operation>+</button>
+                    <button data-operation id='+'>+</button>
                 </td>
             </tr>
 
@@ -74,7 +74,7 @@
                     <button data-number>9</button>
                 </td>
                 <td>
-                    <button data-operation>-</button>
+                    <button data-operation id='-'>-</button>
                 </td>
             </tr>
 
@@ -86,7 +86,7 @@
                     <button data-number>0</button>
                 </td>
                 <td colspan="2" style="width:100%" class="span-two">
-                    <button data-equals>=</button>
+                    <button data-equals id="=" onclick="equalsButton()">=</button>
                 </td>
             </tr>
         </table>
