@@ -1,4 +1,4 @@
-const url = "https://amhep.pythonanywhere.com/grades";
+const url = "http://10.0.0.95:105/grade";
 
 function APIget(x = "", meth = "GET") {
     let newQuery;
@@ -6,8 +6,8 @@ function APIget(x = "", meth = "GET") {
         newQuery = url;
     } else {
         x = `${x}`.split(" ");
-        if (x.length > 1) newQuery = url + `/${x[0]}%20${x[1]}`;
-        else newQuery = url + `/${x[0]}`;
+        if (x.length > 1) newQuery = url + `/${x[0]}%20${x[1]}/`;
+        else newQuery = url + `/${x[0]}/`;
     }
     console.log(newQuery);
     fetch(newQuery, {
@@ -67,8 +67,8 @@ function APIput(name, grade, meth) {
         newQuery = url;
     } else {
         x = `${name}`.split(" ");
-        if (x.length > 1) newQuery = url + `/${x[0]}%20${x[1]}`;
-        else newQuery = url + `/${x[0]}`;
+        if (x.length > 1) newQuery = url + `/${x[0]}%20${x[1]}/`;
+        else newQuery = url + `/${x[0]}/`;
     }
     fetch(newQuery, {
             method: meth,
