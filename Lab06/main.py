@@ -18,8 +18,8 @@ def api():
     f = open('db.txt', 'r+')
     if request.method == 'GET':
         json_data = json.load(f)
+        
     elif request.method == 'POST':
-        print('entering post')
         f = open('db.txt', 'r+')
         json_data = json.load(f)
         f.seek(0)
@@ -27,7 +27,7 @@ def api():
         name = new_data['name']
         grade = new_data['grade']
         json_data.update({name:grade})
-        print(json_data)
+
 
         f.write(json.dumps(json_data))
         f.truncate()
