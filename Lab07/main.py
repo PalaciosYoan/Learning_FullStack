@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, redirect
 import json
 from flask_sqlalchemy import SQLAlchemy
 
@@ -35,22 +35,27 @@ def default():
 def get_all_students():
     return Grades.query.all()
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return "error", 404
 
 @app.route('/grade', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def api():
     '''handles GET and POST'''
+    all_students_data = get_all_students()
+    json_data = to_json(all_students_data)
     if request.method == 'GET':
-        all_students_data = get_all_students()
         json_data = to_json(all_students_data)
     
     elif request.method == 'POST':
         new_data = request.get_json()
         name = new_data['name']
         grade = new_data['grade']
+        if name in json_data:
+            return page_not_found(404)
         new_student = Grades(name=name, grade=grade)
         db.session.add(new_student)
         db.session.commit()
-        return jsonify(to_json(get_all_students()))
 
     return jsonify(json_data)
 
