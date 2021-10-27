@@ -1,4 +1,6 @@
-const url = "https://amhep.pythonanywhere.com/grades";
+// const url = "https://amhep.pythonanywhere.com/grades";
+
+const url = "http://127.0.0.1:5000/grade";
 
 function APIget(x = "", meth = "GET") {
     let newQuery;

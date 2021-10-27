@@ -36,7 +36,7 @@ def api():
         
     return jsonify(json_data)
 
-@app.route('/grade/<string:name>/', methods=['GET', 'PUT', 'DELETE'])
+@app.route('/grade/<string:name>', methods=['GET', 'PUT', 'DELETE'])
 def apiSpecificName(name):
     '''handle GET PUT DELETE for specifics names'''
     f = open('db.txt', 'r+')

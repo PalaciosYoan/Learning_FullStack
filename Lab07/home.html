@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>Grades</title>
+    <link rel="stylesheet" href="./static/css/styles.css" />
+    <script src="./static/js/index.js" defer></script>
+</head>
+
+<body>
+    <h1>Grade Manager App</h1>
+    <div class='content'>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Get Grade</th>
+                    <th>Create Student</th>
+                    <th>Edit Student</th>
+                    <th>Delete Student</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>Get Student Grade:</p>
+                        <input type="buttons" name="studentnameget" id="studentnameget" />
+                    </td>
+
+                    <td>
+                        <p>Student Name</p>
+                        <input type="buttons" name="studentname" id="studentname" />
+                        <p>Grade</p>
+                        <input type="buttons" name="studentgrade" id="studentgrade" />
+                    </td>
+
+                    <td>
+                        <p>Student Name</p>
+                        <input type="buttons" name="studentname1" id="studentname1" />
+                        <p>New Grade</p>
+                        <input type="buttons" name="studentgrade1" id="studentgrade1" />
+                    </td>
+
+                    <td>
+                        <p>Student Name</p>
+                        <input type="buttons" name="studentname2" id="studentname2" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><button style="vertical-align:middle" id="1"><span>enter</span></button></td>
+                    <td><button style="vertical-align:middle" id="2"><span>enter</span></button></td>
+                    <td><button style="vertical-align:middle" id="3"><span>enter</span></button></td>
+                    <td><button style="vertical-align:middle" id="4"><span>enter</span></button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button style="vertical-align:middle" id="allinfo"><span>Refresh</span></button>
+        <h2>Grade List</h2>
+        <p id="allgrades">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>
+                            name
+                        </th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id='tableAllGrades'>
+
+                </tbody>
+            </table>
+        </p>
+    </div class='content'>
+</body>
+
+</html>
