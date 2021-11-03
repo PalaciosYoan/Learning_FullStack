@@ -1,4 +1,4 @@
-const url = "http://10.0.0.95:105/grade";
+const url = "http://127.0.0.1:5000/grade";
 
 function APIget(x = "", meth = "GET") {
     let newQuery;
